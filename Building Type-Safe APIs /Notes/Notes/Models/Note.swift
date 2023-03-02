@@ -14,7 +14,7 @@ internal struct Note {
 
     let title: String
     let body: String
-    let kind: String
+    let kind: Kind
 
     // MARK: -
 
@@ -32,7 +32,7 @@ extension Note {
         .init(
             title: "Morbi volutpat risus eget turpis fringilla ultricies.",
             body: "In hac habitasse platea dictumst. Pellentesque molestie ipsum blandit odio ultrices viverra. Phasellus imperdiet et est a sollicitudin.",
-            kind: "blank"
+            kind: .blank
         )
     }
 

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		00467BED29B0D69D0063D916 /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00467BEC29B0D69D0063D916 /* Journey.swift */; };
 		00467BEF29B0E0A50063D916 /* GoogleAnalyticsClient+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00467BEE29B0E0A50063D916 /* GoogleAnalyticsClient+Helpers.swift */; };
+		0063F68729B1158300F7753B /* Kind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063F68629B1158300F7753B /* Kind.swift */; };
+		0063F68929B1163F00F7753B /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063F68829B1163F00F7753B /* Source.swift */; };
 		EF47C8AB29448BD300DF5A36 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF47C8AA29448BD300DF5A36 /* Configuration.swift */; };
 		EFA6444B292E3AF200B60777 /* Container+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA6444A292E3AF200B60777 /* Container+Helpers.swift */; };
 		EFA64456292E3E6600B60777 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA64455292E3E6600B60777 /* Note.swift */; };
@@ -28,6 +30,8 @@
 /* Begin PBXFileReference section */
 		00467BEC29B0D69D0063D916 /* Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
 		00467BEE29B0E0A50063D916 /* GoogleAnalyticsClient+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleAnalyticsClient+Helpers.swift"; sourceTree = "<group>"; };
+		0063F68629B1158300F7753B /* Kind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kind.swift; sourceTree = "<group>"; };
+		0063F68829B1163F00F7753B /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		EF47C8AA29448BD300DF5A36 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		EFA6444A292E3AF200B60777 /* Container+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+Helpers.swift"; sourceTree = "<group>"; };
 		EFA64455292E3E6600B60777 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
@@ -86,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				EFA64455292E3E6600B60777 /* Note.swift */,
+				0063F68629B1158300F7753B /* Kind.swift */,
+				0063F68829B1163F00F7753B /* Source.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -279,8 +285,10 @@
 				EFA64456292E3E6600B60777 /* Note.swift in Sources */,
 				EFD3B2B1292CE1E100805B48 /* SceneDelegate.swift in Sources */,
 				EFB42456293650480042CA8C /* GoogleAnalyticsClient.swift in Sources */,
+				0063F68929B1163F00F7753B /* Source.swift in Sources */,
 				EFD3B2D1292CE6BF00805B48 /* GoogleAnalyticsService.swift in Sources */,
 				EF47C8AB29448BD300DF5A36 /* Configuration.swift in Sources */,
+				0063F68729B1158300F7753B /* Kind.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

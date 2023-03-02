@@ -59,8 +59,8 @@ extension Journey {
         
         //MARK: - Cases
         
-        case kind(String)
-        case source(String)
+        case kind(Kind)
+        case source(Source)
         case wordCount(Int)
         
         var name: String {
@@ -73,8 +73,8 @@ extension Journey {
         
         var value: Any {
             switch self {
-            case .kind(let kind): return kind
-            case .source(let source): return source
+            case .kind(let kind): return kind.rawValue
+            case .source(let source): return source.rawValue
             case .wordCount(let wordCount): return wordCount
             }
         }
