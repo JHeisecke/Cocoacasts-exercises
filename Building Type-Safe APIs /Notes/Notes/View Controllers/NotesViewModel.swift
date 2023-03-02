@@ -14,27 +14,27 @@ internal final class NotesViewModel {
 
     func createNote(_ note: Note) {
         Journey.createNote
-            .properties([
-                "source": "home",
-                "kind": "template"
-            ]).send()
+            .properties(
+                .kind("template"),
+                .source("home")
+            ).send()
     }
 
     func updateNote(_ note: Note) {
         Journey.updateNote
-            .properties([
-                "source": "home",
-                "kind": "template",
-                "word_count": note.wordCount
-            ]).send()
+            .properties(
+                .kind("template"),
+                .source("home"),
+                .wordCount(note.wordCount)
+            ).send()
     }
 
     func deleteNote(_ note: Note) {
         Journey.deleteNote
-            .properties([
-                "kind": "template",
-                "word_count": note.wordCount
-            ]).send()
+            .properties(
+                .kind("template"),
+                .wordCount(note.wordCount)
+            ).send()
     }
 
 }

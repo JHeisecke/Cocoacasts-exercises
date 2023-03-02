@@ -29,7 +29,7 @@ internal enum Journey {
     
     // MARK: - Public API
     
-    func properties(_ properties: [String: Any]) -> Event {
+    func properties(_ properties: Property...) -> Event {
         Event(name: event, properties: properties)
     }
 }
@@ -42,12 +42,41 @@ extension Journey {
         // MARK: - Properties
         
         let name: String
-        let properties: [String: Any]
+        let properties: [Property]
         
         // MARK: - Properties
         
         func send(to analyticsService: GoogleAnalyticsClient = .shared) {
+            var properties: [String: Any] = [:]
+            self.properties.forEach { property in
+                properties[property.name] = property.value
+            }
             analyticsService.trackEvent(with: name, properties: properties)
+        }
+    }
+    
+    enum Property {
+        
+        //MARK: - Cases
+        
+        case kind(String)
+        case source(String)
+        case wordCount(Int)
+        
+        var name: String {
+            switch self {
+            case .kind: return "kind"
+            case .source: return "source"
+            case .wordCount: return "wordCount"
+            }
+        }
+        
+        var value: Any {
+            switch self {
+            case .kind(let kind): return kind
+            case .source(let source): return source
+            case .wordCount(let wordCount): return wordCount
+            }
         }
     }
 }
