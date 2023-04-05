@@ -8,12 +8,13 @@
 import Foundation
 import Swinject
 
-internal enum Journey {
+internal enum Journey: CaseIterable {
     
     // MARK: - Cases
     case createNote
     case updateNote
     case deleteNote
+    case duplicateNote
     
     // MARK: - Properties
     
@@ -25,6 +26,8 @@ internal enum Journey {
             return "update-note"
         case .deleteNote:
             return "delete-note"
+        case .duplicateNote:
+            return "duplicate-note"
         }
     }
     

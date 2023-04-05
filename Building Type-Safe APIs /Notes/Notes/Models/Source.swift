@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Source: String {
+enum Source: String, CaseIterable {
     
     // MARK: - Cases
     case home
