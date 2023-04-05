@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal final class GoogleAnalyticsService: AnalyticsService {
+internal final class GoogleAnalyticsService {
 
     // MARK: - Type Properties
 

@@ -9,7 +9,7 @@
 import Foundation
 
 internal final class NotesViewModel {
-
+    
     // MARK: - Public API
 
     func createNote(_ note: Note) {

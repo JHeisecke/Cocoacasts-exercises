@@ -34,7 +34,7 @@ internal final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func setupDependencies() {
         Container.shared.register(AnalyticsService.self) { _ in
-            GoogleAnalyticsService()
+            GoogleAnalyticsClient(apiKey: Configuration.Google.apiKey, clientSecret: Configuration.Google.clientSecret)
         }
     }
 

@@ -10,6 +10,6 @@ import Foundation
 
 protocol AnalyticsService {
 
-    func send(event: String, properties: [String: Any])
+    func send(event: Journey.Event)
 
 }

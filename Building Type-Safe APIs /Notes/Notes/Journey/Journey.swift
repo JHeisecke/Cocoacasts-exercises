@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Swinject
 
 internal enum Journey {
     
@@ -44,14 +45,10 @@ extension Journey {
         let name: String
         let properties: [Property]
         
-        // MARK: - Properties
+        // MARK: - Public API
         
-        func send(to analyticsService: GoogleAnalyticsClient = .shared) {
-            var properties: [String: Any] = [:]
-            self.properties.forEach { property in
-                properties[property.name] = property.value
-            }
-            analyticsService.trackEvent(with: name, properties: properties)
+        func send(to analyticsService: AnalyticsService = Container.analyticsService) {
+            analyticsService.send(event: self)
         }
     }
     
