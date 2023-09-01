@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0063E4FB2AA00A580076C459 /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063E4FA2AA00A580076C459 /* NotesViewModel.swift */; };
+		0063E4FE2AA23AB00076C459 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063E4FD2AA23AB00076C459 /* ApiService.swift */; };
+		0063E5002AA23AD10076C459 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063E4FF2AA23AD10076C459 /* ApiClient.swift */; };
 		EF1BBD6928B79D5C00EC653C /* NotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1BBD6828B79D5C00EC653C /* NotesApp.swift */; };
 		EF1BBD6B28B79D5C00EC653C /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1BBD6A28B79D5C00EC653C /* NotesView.swift */; };
 		EF1BBD6D28B79D5D00EC653C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1BBD6C28B79D5D00EC653C /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		0063E4FA2AA00A580076C459 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
+		0063E4FD2AA23AB00076C459 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		0063E4FF2AA23AD10076C459 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		EF1BBD6528B79D5C00EC653C /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1BBD6828B79D5C00EC653C /* NotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesApp.swift; sourceTree = "<group>"; };
 		EF1BBD6A28B79D5C00EC653C /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
@@ -38,6 +42,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0063E4FC2AA23AA40076C459 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				0063E4FD2AA23AB00076C459 /* ApiService.swift */,
+				0063E4FF2AA23AD10076C459 /* ApiClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		EF1BBD5C28B79D5C00EC653C = {
 			isa = PBXGroup;
 			children = (
@@ -57,6 +70,7 @@
 		EF1BBD6728B79D5C00EC653C /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				0063E4FC2AA23AA40076C459 /* Networking */,
 				EF1BBD7628B79D7600EC653C /* App */,
 				EF1BBD7828B79D8900EC653C /* Views */,
 				EF1BBD7928B79DBE00EC653C /* Models */,
@@ -178,8 +192,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0063E5002AA23AD10076C459 /* ApiClient.swift in Sources */,
 				EF1BBD6B28B79D5C00EC653C /* NotesView.swift in Sources */,
 				0063E4FB2AA00A580076C459 /* NotesViewModel.swift in Sources */,
+				0063E4FE2AA23AB00076C459 /* ApiService.swift in Sources */,
 				EF1BBD6928B79D5C00EC653C /* NotesApp.swift in Sources */,
 				EF1BBD7D28B79EF000EC653C /* NoteView.swift in Sources */,
 				EF1BBD7B28B79DCC00EC653C /* Note.swift in Sources */,

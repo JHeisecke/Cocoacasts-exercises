@@ -9,13 +9,31 @@ import Foundation
 
 
 /// we need to publish changes from the main thread, therefore, the class gets a modifier @MainActor to publish changes in the main thread
+/// The reason behind this is because UI changes should always be published in the main thread
 @MainActor final class NotesViewModel: ObservableObject {
+    
+    // MARK: - Properties
+
+    private let apiService: ApiService
     
     @Published private(set) var notes: [Note] = []
     
-    func fetchNotes() async throws {
-        let url = URL(string: "https://cdn.cocoacasts.com/2354d51028d53fcc00ceb0c66f25475d5c79bff0/notes.json")!
-        let (data, _) = try await URLSession.shared.data(from: url)
-        notes = try JSONDecoder().decode([Note].self, from: data)
+    // MARK: - Initialization
+    
+    init(apiService: ApiService) {
+        self.apiService = apiService
     }
+
+    // MARK: - Helper Methods
+    
+    func start() {
+        Task {
+            do {
+                notes = try await apiService.fetchNotes()
+            } catch {
+                print("Unable to Fetch Notes \(error)")
+            }
+        }
+    }
+    
 }

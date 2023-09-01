@@ -12,7 +12,9 @@ struct NotesView: View {
 
     // MARK: - Properties
 
-    @ObservedObject var viewModel = NotesViewModel()
+    @ObservedObject var viewModel = NotesViewModel(
+        apiService: ApiClient()
+    )
 
     // MARK: - View
 
@@ -23,14 +25,8 @@ struct NotesView: View {
             }
             .navigationTitle("Notes")
         }
-        .task {
-            Task {
-                do {
-                    try await viewModel.fetchNotes()
-                } catch {
-                    print("Unable to Fetch Notes \(error.localizedDescription)")
-                }
-            }
+        .onAppear {
+            viewModel.start()
         }
     }
 
