@@ -29,10 +29,12 @@ struct NoteView: View {
 }
 
 struct NoteView_Previews: PreviewProvider {
+
     static var previews: some View {
         NoteView(
             title: "My Note",
             contents: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         )
     }
+
 }

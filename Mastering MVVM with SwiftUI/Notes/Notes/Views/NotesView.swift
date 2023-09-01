@@ -12,16 +12,17 @@ struct NotesView: View {
 
     // MARK: - Properties
 
-    @ObservedObject var viewModel = NotesViewModel(
-        apiService: ApiClient()
-    )
+    @ObservedObject var viewModel: NotesViewModel
 
     // MARK: - View
 
     var body: some View {
         NavigationView {
             List(viewModel.notes) { note in
-                NoteView(title: note.title, contents: note.contents)
+                NoteView(
+                    title: note.title,
+                    contents: note.contents
+                )
             }
             .navigationTitle("Notes")
         }
@@ -34,6 +35,10 @@ struct NotesView: View {
 
 struct NotesView_Previews: PreviewProvider {
     static var previews: some View {
-        NotesView()
+        NotesView(
+            viewModel: .init(
+                apiService: APIPreviewClient()
+            )
+        )
     }
 }
