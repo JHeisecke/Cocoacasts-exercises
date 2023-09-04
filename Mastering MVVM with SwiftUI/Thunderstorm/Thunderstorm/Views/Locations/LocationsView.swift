@@ -18,9 +18,10 @@ struct LocationsView: View {
             ScrollView {
                 LazyVGrid(columns: [GridItem()], spacing: 20) {
                     ForEach(viewModel.locationCellViewModels) { viewModel in
-                        Text("\(viewModel.locationName) \(viewModel.locationCountry)")
+                        LocationCell(viewModel: viewModel)
                     }
                 }
+                .padding()
             }
             .navigationTitle(viewModel.title)
         }

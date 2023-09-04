@@ -34,4 +34,16 @@ struct LocationCellViewModel: Identifiable {
     var locationCountry: String {
         location.country
     }
+    
+    var summary: String? {
+        "Clear"
+    }
+    
+    var windSpeed: String? {
+        "10 mi/h"
+    }
+    
+    var temperaute: String? {
+        "90 °F"
+    }
 }
