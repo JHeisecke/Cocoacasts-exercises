@@ -14,7 +14,7 @@ import Foundation
 
     private let apiService: APIService
 
-    @Published private(set) var notes: [Note] = []
+    @Published private(set) var notesViewModel: [NoteViewModel] = []
 
     // MARK: - Initialization
 
@@ -27,7 +27,8 @@ import Foundation
     func start() {
         Task {
             do {
-                notes = try await apiService.fetchNotes()
+                notesViewModel = try await apiService.fetchNotes()
+                    .map(NoteViewModel.init)
             } catch {
                 print("Unable to Fetch Notes \(error)")
             }

@@ -18,11 +18,8 @@ struct NotesView: View {
 
     var body: some View {
         NavigationView {
-            List(viewModel.notes) { note in
-                NoteView(
-                    title: note.title,
-                    contents: note.contents
-                )
+            List(viewModel.notesViewModel) { presentable in
+                NoteView(presentable: presentable)
             }
             .navigationTitle("Notes")
         }

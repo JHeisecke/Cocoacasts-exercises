@@ -12,16 +12,15 @@ struct NoteView: View {
 
     // MARK: - Properties
 
-    let title: String
-    let contents: String
+    let presentable: NotePresentable
 
     // MARK: - View
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text(title)
+            Text(presentable.title)
                 .font(.title)
-            Text(contents)
+            Text(presentable.contents)
                 .font(.body)
         }
     }
@@ -30,10 +29,18 @@ struct NoteView: View {
 
 struct NoteView_Previews: PreviewProvider {
 
+    private struct PreviewPresentable: NotePresentable {
+        var title: String {
+            "My Note"
+        }
+        
+        var contents: String {
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        }
+    }
+    
     static var previews: some View {
-        NoteView(
-            title: "My Note",
-            contents: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        NoteView(presentable: PreviewPresentable()
         )
     }
 
