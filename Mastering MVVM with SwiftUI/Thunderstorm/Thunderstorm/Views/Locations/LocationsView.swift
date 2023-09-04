@@ -15,8 +15,14 @@ struct LocationsView: View {
     
     var body: some View {
         NavigationView {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-                .navigationTitle(viewModel.title)
+            ScrollView {
+                LazyVGrid(columns: [GridItem()], spacing: 20) {
+                    ForEach(viewModel.locationCellViewModels) { viewModel in
+                        Text("\(viewModel.locationName) \(viewModel.locationCountry)")
+                    }
+                }
+            }
+            .navigationTitle(viewModel.title)
         }
     }
 }
