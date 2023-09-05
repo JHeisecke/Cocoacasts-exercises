@@ -20,10 +20,12 @@ struct LocationView: View {
             CurrentConditionsView(
                 viewModel: viewModel.currentConditionsViewModel
             )
+            Divider()
             ForecastView(
                 viewModel: viewModel.forecastViewModel
             )
         }
+        .navigationTitle(viewModel.locationName)
     }
 }
 
@@ -31,6 +33,8 @@ struct LocationView: View {
 
 struct LocationView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationView(viewModel: LocationViewModel(location: .preview))
+        NavigationView {
+            LocationView(viewModel: LocationViewModel(location: .preview))
+        }
     }
 }

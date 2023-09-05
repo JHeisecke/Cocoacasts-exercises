@@ -13,6 +13,10 @@ struct LocationViewModel {
     
     private let location: Location
     
+    var locationName: String {
+        location.name
+    }
+    
     var currentConditionsViewModel: CurrentConditionsViewModel {
         .init()
     }
@@ -26,4 +30,5 @@ struct LocationViewModel {
     init(location: Location) {
         self.location = location
     }
+    
 }

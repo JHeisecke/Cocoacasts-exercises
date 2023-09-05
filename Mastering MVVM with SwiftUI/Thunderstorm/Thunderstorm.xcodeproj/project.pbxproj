@@ -21,6 +21,8 @@
 		00AEE6272AA7CF4E0080E57A /* CurrentConditionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE6262AA7CF4E0080E57A /* CurrentConditionsViewModel.swift */; };
 		00AEE6292AA7D1A40080E57A /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE6282AA7D1A40080E57A /* ForecastViewModel.swift */; };
 		00AEE62B2AA7D1B40080E57A /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE62A2AA7D1B40080E57A /* ForecastView.swift */; };
+		00AEE62D2AA7DA220080E57A /* ForecastCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE62C2AA7DA220080E57A /* ForecastCellViewModel.swift */; };
+		00AEE62F2AA7DA3A0080E57A /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE62E2AA7DA3A0080E57A /* ForecastCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		00AEE6262AA7CF4E0080E57A /* CurrentConditionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentConditionsViewModel.swift; sourceTree = "<group>"; };
 		00AEE6282AA7D1A40080E57A /* ForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
 		00AEE62A2AA7D1B40080E57A /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
+		00AEE62C2AA7DA220080E57A /* ForecastCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCellViewModel.swift; sourceTree = "<group>"; };
+		00AEE62E2AA7DA3A0080E57A /* ForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 				00AEE61F2AA7CE5D0080E57A /* LocationView.swift */,
 				00AEE6242AA7CF430080E57A /* CurrentConditionsView.swift */,
 				00AEE62A2AA7D1B40080E57A /* ForecastView.swift */,
+				00AEE62E2AA7DA3A0080E57A /* ForecastCell.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 		00AEE6212AA7CE8D0080E57A /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				00AEE62C2AA7DA220080E57A /* ForecastCellViewModel.swift */,
 				00AEE6222AA7CE970080E57A /* LocationViewModel.swift */,
 				00AEE6262AA7CF4E0080E57A /* CurrentConditionsViewModel.swift */,
 				00AEE6282AA7D1A40080E57A /* ForecastViewModel.swift */,
@@ -240,7 +246,9 @@
 				00AEE6292AA7D1A40080E57A /* ForecastViewModel.swift in Sources */,
 				00AEE6202AA7CE5D0080E57A /* LocationView.swift in Sources */,
 				0069625C2AA6767F000FDDE9 /* LocationsViewModel.swift in Sources */,
+				00AEE62F2AA7DA3A0080E57A /* ForecastCell.swift in Sources */,
 				006962612AA67AFA000FDDE9 /* LocationCellViewModel.swift in Sources */,
+				00AEE62D2AA7DA220080E57A /* ForecastCellViewModel.swift in Sources */,
 				00AEE6232AA7CE970080E57A /* LocationViewModel.swift in Sources */,
 				00AEE62B2AA7D1B40080E57A /* ForecastView.swift in Sources */,
 			);
