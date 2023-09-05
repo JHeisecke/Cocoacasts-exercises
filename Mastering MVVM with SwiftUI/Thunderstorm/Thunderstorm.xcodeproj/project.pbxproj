@@ -23,6 +23,7 @@
 		00AEE62B2AA7D1B40080E57A /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE62A2AA7D1B40080E57A /* ForecastView.swift */; };
 		00AEE62D2AA7DA220080E57A /* ForecastCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE62C2AA7DA220080E57A /* ForecastCellViewModel.swift */; };
 		00AEE62F2AA7DA3A0080E57A /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE62E2AA7DA3A0080E57A /* ForecastCell.swift */; };
+		00AEE6312AA7DFEC0080E57A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE6302AA7DFEC0080E57A /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		00AEE62A2AA7D1B40080E57A /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
 		00AEE62C2AA7DA220080E57A /* ForecastCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCellViewModel.swift; sourceTree = "<group>"; };
 		00AEE62E2AA7DA3A0080E57A /* ForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
+		00AEE6302AA7DFEC0080E57A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				0069624A2AA675FC000FDDE9 /* Assets.xcassets */,
+				00AEE6302AA7DFEC0080E57A /* Colors.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00AEE6272AA7CF4E0080E57A /* CurrentConditionsViewModel.swift in Sources */,
+				00AEE6312AA7DFEC0080E57A /* Colors.swift in Sources */,
 				00AEE6252AA7CF430080E57A /* CurrentConditionsView.swift in Sources */,
 				006962592AA6764B000FDDE9 /* LocationsView.swift in Sources */,
 				006962632AA67E7C000FDDE9 /* LocationCell.swift in Sources */,
