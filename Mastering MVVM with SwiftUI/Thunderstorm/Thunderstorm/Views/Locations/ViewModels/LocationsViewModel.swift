@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 struct LocationsViewModel {
     
     var title: String {
@@ -19,5 +20,9 @@ struct LocationsViewModel {
     
     var addLocationTitle: String {
         "Add Location"
+    }
+    
+    var addLocationViewModel: AddLocationViewModel {
+        AddLocationViewModel(geocodingService: GeocodingClient())
     }
 }

@@ -28,6 +28,9 @@
 		00EABBD92AD064DE00288879 /* AddLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EABBD82AD064DE00288879 /* AddLocationViewModel.swift */; };
 		00EABBDB2AD0666500288879 /* AddLocationCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EABBDA2AD0666500288879 /* AddLocationCellView.swift */; };
 		00EABBDD2AD0667700288879 /* AddLocationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EABBDC2AD0667700288879 /* AddLocationCellViewModel.swift */; };
+		00EABBE02AD0786E00288879 /* GeocodingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EABBDF2AD0786E00288879 /* GeocodingService.swift */; };
+		00EABBE22AD078A200288879 /* GeocodingPreviewClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EABBE12AD078A200288879 /* GeocodingPreviewClient.swift */; };
+		00EABBE42AD078C700288879 /* GeocodingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EABBE32AD078C700288879 /* GeocodingClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +56,9 @@
 		00EABBD82AD064DE00288879 /* AddLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewModel.swift; sourceTree = "<group>"; };
 		00EABBDA2AD0666500288879 /* AddLocationCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationCellView.swift; sourceTree = "<group>"; };
 		00EABBDC2AD0667700288879 /* AddLocationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationCellViewModel.swift; sourceTree = "<group>"; };
+		00EABBDF2AD0786E00288879 /* GeocodingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingService.swift; sourceTree = "<group>"; };
+		00EABBE12AD078A200288879 /* GeocodingPreviewClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingPreviewClient.swift; sourceTree = "<group>"; };
+		00EABBE32AD078C700288879 /* GeocodingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,7 @@
 		006962452AA675FB000FDDE9 /* Thunderstorm */ = {
 			isa = PBXGroup;
 			children = (
+				00EABBDE2AD0786000288879 /* Geocoding */,
 				0069625D2AA679B2000FDDE9 /* Models */,
 				006962562AA67618000FDDE9 /* App */,
 				006962552AA6760D000FDDE9 /* Views */,
@@ -198,6 +205,16 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		00EABBDE2AD0786000288879 /* Geocoding */ = {
+			isa = PBXGroup;
+			children = (
+				00EABBDF2AD0786E00288879 /* GeocodingService.swift */,
+				00EABBE12AD078A200288879 /* GeocodingPreviewClient.swift */,
+				00EABBE32AD078C700288879 /* GeocodingClient.swift */,
+			);
+			path = Geocoding;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -269,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00AEE6272AA7CF4E0080E57A /* CurrentConditionsViewModel.swift in Sources */,
+				00EABBE02AD0786E00288879 /* GeocodingService.swift in Sources */,
 				00AEE6312AA7DFEC0080E57A /* Colors.swift in Sources */,
 				00EABBDD2AD0667700288879 /* AddLocationCellViewModel.swift in Sources */,
 				00AEE6252AA7CF430080E57A /* CurrentConditionsView.swift in Sources */,
@@ -280,6 +298,8 @@
 				00AEE6292AA7D1A40080E57A /* ForecastViewModel.swift in Sources */,
 				00AEE6202AA7CE5D0080E57A /* LocationView.swift in Sources */,
 				0069625C2AA6767F000FDDE9 /* LocationsViewModel.swift in Sources */,
+				00EABBE22AD078A200288879 /* GeocodingPreviewClient.swift in Sources */,
+				00EABBE42AD078C700288879 /* GeocodingClient.swift in Sources */,
 				00AEE62F2AA7DA3A0080E57A /* ForecastCell.swift in Sources */,
 				006962612AA67AFA000FDDE9 /* LocationCellViewModel.swift in Sources */,
 				00AEE62D2AA7DA220080E57A /* ForecastCellViewModel.swift in Sources */,

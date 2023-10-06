@@ -38,7 +38,7 @@ struct LocationsView: View {
             }
             .navigationTitle(viewModel.title)
             .sheet(isPresented: $showsAddLocationView) {
-                AddLocationView(viewModel: .init(), showsAddLocationview: $showsAddLocationView)
+                AddLocationView(viewModel: viewModel.addLocationViewModel, showsAddLocationview: $showsAddLocationView)
             }
         }
     }
