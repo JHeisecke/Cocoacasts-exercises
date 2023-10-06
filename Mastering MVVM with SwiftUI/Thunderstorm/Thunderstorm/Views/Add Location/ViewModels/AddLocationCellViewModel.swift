@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AddLocationCellViewModel {
+struct AddLocationCellViewModel: Identifiable {
     
     // MARK: - Properties
     
@@ -20,6 +20,10 @@ struct AddLocationCellViewModel {
     }
     
     // MARK: - Public API
+    
+    var id: String {
+        location.id
+    }
     
     var name: String {
         location.name
