@@ -16,4 +16,8 @@ struct LocationsViewModel {
     var locationCellViewModels: [LocationCellViewModel] {
         Location.previews.map(LocationCellViewModel.init)
     }
+    
+    var addLocationTitle: String {
+        "Add Location"
+    }
 }

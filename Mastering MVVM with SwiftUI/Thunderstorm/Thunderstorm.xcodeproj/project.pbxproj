@@ -24,6 +24,10 @@
 		00AEE62D2AA7DA220080E57A /* ForecastCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE62C2AA7DA220080E57A /* ForecastCellViewModel.swift */; };
 		00AEE62F2AA7DA3A0080E57A /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE62E2AA7DA3A0080E57A /* ForecastCell.swift */; };
 		00AEE6312AA7DFEC0080E57A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE6302AA7DFEC0080E57A /* Colors.swift */; };
+		00EABBD62AD064C600288879 /* AddLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EABBD52AD064C600288879 /* AddLocationView.swift */; };
+		00EABBD92AD064DE00288879 /* AddLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EABBD82AD064DE00288879 /* AddLocationViewModel.swift */; };
+		00EABBDB2AD0666500288879 /* AddLocationCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EABBDA2AD0666500288879 /* AddLocationCellView.swift */; };
+		00EABBDD2AD0667700288879 /* AddLocationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EABBDC2AD0667700288879 /* AddLocationCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,10 @@
 		00AEE62C2AA7DA220080E57A /* ForecastCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCellViewModel.swift; sourceTree = "<group>"; };
 		00AEE62E2AA7DA3A0080E57A /* ForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
 		00AEE6302AA7DFEC0080E57A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		00EABBD52AD064C600288879 /* AddLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationView.swift; sourceTree = "<group>"; };
+		00EABBD82AD064DE00288879 /* AddLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewModel.swift; sourceTree = "<group>"; };
+		00EABBDA2AD0666500288879 /* AddLocationCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationCellView.swift; sourceTree = "<group>"; };
+		00EABBDC2AD0667700288879 /* AddLocationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,7 @@
 		006962552AA6760D000FDDE9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				00EABBD42AD064BB00288879 /* Add Location */,
 				00AEE61E2AA7CE450080E57A /* Location */,
 				006962572AA6763D000FDDE9 /* Locations */,
 			);
@@ -168,6 +177,25 @@
 				00AEE6282AA7D1A40080E57A /* ForecastViewModel.swift */,
 			);
 			path = "View Models";
+			sourceTree = "<group>";
+		};
+		00EABBD42AD064BB00288879 /* Add Location */ = {
+			isa = PBXGroup;
+			children = (
+				00EABBD52AD064C600288879 /* AddLocationView.swift */,
+				00EABBDA2AD0666500288879 /* AddLocationCellView.swift */,
+				00EABBD72AD064CF00288879 /* ViewModels */,
+			);
+			path = "Add Location";
+			sourceTree = "<group>";
+		};
+		00EABBD72AD064CF00288879 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				00EABBD82AD064DE00288879 /* AddLocationViewModel.swift */,
+				00EABBDC2AD0667700288879 /* AddLocationCellViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,19 +270,23 @@
 			files = (
 				00AEE6272AA7CF4E0080E57A /* CurrentConditionsViewModel.swift in Sources */,
 				00AEE6312AA7DFEC0080E57A /* Colors.swift in Sources */,
+				00EABBDD2AD0667700288879 /* AddLocationCellViewModel.swift in Sources */,
 				00AEE6252AA7CF430080E57A /* CurrentConditionsView.swift in Sources */,
 				006962592AA6764B000FDDE9 /* LocationsView.swift in Sources */,
 				006962632AA67E7C000FDDE9 /* LocationCell.swift in Sources */,
 				006962472AA675FB000FDDE9 /* ThunderstormApp.swift in Sources */,
 				0069625F2AA679BD000FDDE9 /* Location.swift in Sources */,
+				00EABBD92AD064DE00288879 /* AddLocationViewModel.swift in Sources */,
 				00AEE6292AA7D1A40080E57A /* ForecastViewModel.swift in Sources */,
 				00AEE6202AA7CE5D0080E57A /* LocationView.swift in Sources */,
 				0069625C2AA6767F000FDDE9 /* LocationsViewModel.swift in Sources */,
 				00AEE62F2AA7DA3A0080E57A /* ForecastCell.swift in Sources */,
 				006962612AA67AFA000FDDE9 /* LocationCellViewModel.swift in Sources */,
 				00AEE62D2AA7DA220080E57A /* ForecastCellViewModel.swift in Sources */,
+				00EABBD62AD064C600288879 /* AddLocationView.swift in Sources */,
 				00AEE6232AA7CE970080E57A /* LocationViewModel.swift in Sources */,
 				00AEE62B2AA7D1B40080E57A /* ForecastView.swift in Sources */,
+				00EABBDB2AD0666500288879 /* AddLocationCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
