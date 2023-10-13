@@ -19,7 +19,7 @@ final class LocationCellViewModel: Identifiable, ObservableObject {
     
     /// Because we navigate from the cell to the location's view, we create the view model here
     var locationViewModel: LocationViewModel {
-        .init(location: location)
+        .init(location: location, weatherService: weatherService)
     }
     
     private let measurementFormater = ClearSkyFormatter()

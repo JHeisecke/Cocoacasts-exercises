@@ -7,28 +7,38 @@
 
 import Foundation
 
-struct LocationViewModel {
+@MainActor
+final class LocationViewModel: ObservableObject {
     
     // MARK: - Properties
-    
+    private let weatherService: WeatherService
     private let location: Location
     
     var locationName: String {
         location.name
     }
     
-    var currentConditionsViewModel: CurrentConditionsViewModel {
-        .init(currently: WeatherData.preview.currently)
-    }
+    @Published private(set) var currentConditionsViewModel: CurrentConditionsViewModel?
     
-    var forecastViewModel: ForecastViewModel {
-        .init(forecast: WeatherData.preview.forecast)
-    }
+    @Published private(set) var forecastViewModel: ForecastViewModel?
     
     // MARK: - Initialization
     
-    init(location: Location) {
+    init(location: Location, weatherService: WeatherService) {
         self.location = location
+        self.weatherService = weatherService
+    }
+    
+    func start() async {
+        do {
+            let data = try await weatherService.weather(for: location)
+            
+            currentConditionsViewModel = .init(currently: data.currently)
+            forecastViewModel = .init(forecast: data.forecast)
+            
+        } catch {
+            print("Unable to fetch data for \(location) \(error)")
+        }
     }
     
 }

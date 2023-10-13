@@ -11,21 +11,32 @@ struct LocationView: View {
     
     // MARK: Properties
     
-    let viewModel: LocationViewModel
+    @ObservedObject var viewModel: LocationViewModel
     
     // MARK: View
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0.0) {
-            CurrentConditionsView(
-                viewModel: viewModel.currentConditionsViewModel
-            )
-            Divider()
-            ForecastView(
-                viewModel: viewModel.forecastViewModel
-            )
+            if let currentConditionsViewModel = viewModel.currentConditionsViewModel,
+               let forecastViewModel = viewModel.forecastViewModel {
+                
+                CurrentConditionsView(
+                    viewModel: currentConditionsViewModel
+                )
+                
+                Divider()
+                
+                ForecastView(
+                    viewModel: forecastViewModel
+                )
+            } else {
+                ProgressView()
+            }
         }
         .navigationTitle(viewModel.locationName)
+        .task {
+            await viewModel.start()
+        }
     }
 }
 
@@ -34,7 +45,7 @@ struct LocationView: View {
 struct LocationView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            LocationView(viewModel: LocationViewModel(location: .preview))
+            LocationView(viewModel: LocationViewModel(location: .preview, weatherService: WeatherPreviewClient()))
         }
     }
 }
