@@ -9,7 +9,16 @@ import Foundation
 
 final class WeatherClient: WeatherService {
     
-    private let baseURL = URL(string: "https://cocoacasts.com/clearsky")!
+    private let baseURL: URL
+    private let apiKey: String
+    
+    init(
+        baseURL: URL = Configuration.clearSkyBaseUrl,
+        apiKey: String = Configuration.clearSkyAPIKey
+    ) {
+        self.baseURL = baseURL
+        self.apiKey = apiKey
+    }
     
     func weather(for location: Location) async throws -> WeatherData {
         let queryItems: [URLQueryItem] = [
