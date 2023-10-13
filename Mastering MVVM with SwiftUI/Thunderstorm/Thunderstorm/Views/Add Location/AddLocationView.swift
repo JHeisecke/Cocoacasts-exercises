@@ -18,11 +18,20 @@ struct AddLocationView: View {
             TextField(viewModel.textFieldPlaceholder, text: $viewModel.query)
                 .padding()
             
-            List {
-                ForEach(viewModel.addLocationCellViewModels) { cellViewModel in
-                    AddLocationCellView(viewModel: cellViewModel) {
-                        viewModel.addLocation(with: cellViewModel.id)
-                        showsAddLocationview.wrappedValue.toggle()
+            switch viewModel.state {
+            case .empty:
+                Spacer()
+            case .querying:
+                MessageView(style: .progressView)
+            case .message(let message):
+                MessageView(style: .message(message))
+            case .results(let viewModels):
+                List {
+                    ForEach(viewModels) { cellViewModel in
+                        AddLocationCellView(viewModel: cellViewModel) {
+                            viewModel.addLocation(with: cellViewModel.id)
+                            showsAddLocationview.wrappedValue.toggle()
+                        }
                     }
                 }
             }
@@ -32,4 +41,29 @@ struct AddLocationView: View {
 
 #Preview {
     AddLocationView(viewModel: AddLocationViewModel(geocodingService: GeocodingPreviewClient()), showsAddLocationview: .constant(false))
+}
+
+fileprivate struct MessageView: View {
+    
+    enum Style {
+        case progressView
+        case message(String)
+    }
+    
+    let style: Style
+    
+    var body: some View {
+        VStack {
+            Spacer()
+            switch style {
+            case .progressView:
+                ProgressView()
+            case .message(let message):
+                Text(message)
+                    .font(.body)
+                    .foregroundStyle(Color.darkGray)
+            }
+            Spacer()
+        }
+    }
 }

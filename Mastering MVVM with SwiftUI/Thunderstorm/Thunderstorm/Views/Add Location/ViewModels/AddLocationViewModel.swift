@@ -64,6 +64,10 @@ internal final class AddLocationViewModel: ObservableObject {
             self?.geocodeAddressString(addressString)
         }.store(in: &subscriptions)
         
+        /// Here we listen to changes on the locations array, we map the array to a list of viewModels,
+        /// That result is then combined with the published properties $query and $isQuerying,
+        /// With map we access the new values of each property when changed
+        /// That way we manage the state property
         $locations
             .map { $0.map(AddLocationCellViewModel.init) }
             .combineLatest($query, $isQuerying)
