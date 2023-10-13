@@ -18,7 +18,13 @@ final class GeocodingClient: GeocodingService {
     
     // MARK: - Properties
     
-    private let geocoder = CLGeocoder()
+    private let geocoder: Geocoder
+    
+    // MARK: - Initialization
+    
+    init(geocoder: Geocoder = CLGeocoder()) {
+        self.geocoder = geocoder
+    }
     
     // MARK: - Geocoding Service
     
