@@ -10,6 +10,17 @@ import Foundation
 @MainActor
 final class LocationViewModel: ObservableObject {
     
+    // MARK: - Types
+    
+    enum State {
+        case fetching
+        case data(
+            currentConditionsViewModel: CurrentConditionsViewModel,
+            forecastViewModel: ForecastViewModel
+        )
+        case error(message: String)
+    }
+    
     // MARK: - Properties
     private let weatherService: WeatherService
     private let location: Location
@@ -18,9 +29,7 @@ final class LocationViewModel: ObservableObject {
         location.name
     }
     
-    @Published private(set) var currentConditionsViewModel: CurrentConditionsViewModel?
-    
-    @Published private(set) var forecastViewModel: ForecastViewModel?
+    @Published private(set) var state: State = .fetching
     
     // MARK: - Initialization
     
@@ -33,10 +42,13 @@ final class LocationViewModel: ObservableObject {
         do {
             let data = try await weatherService.weather(for: location)
             
-            currentConditionsViewModel = .init(currently: data.currently)
-            forecastViewModel = .init(forecast: data.forecast)
+            state = .data(
+                currentConditionsViewModel: .init(currently: data.currently),
+                forecastViewModel: .init(forecast: data.forecast)
+            )
             
         } catch {
+            state = .error(message: "Thunderstorm isn't able to display weather data for \(locationName). Please try again later.")
             print("Unable to fetch data for \(location) \(error)")
         }
     }

@@ -17,20 +17,22 @@ struct LocationView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0.0) {
-            if let currentConditionsViewModel = viewModel.currentConditionsViewModel,
-               let forecastViewModel = viewModel.forecastViewModel {
-                
+            switch viewModel.state {
+            case .fetching:
+                ProgressView()
+            case .data(let currentConditionsViewModel, let forecastViewModel):
                 CurrentConditionsView(
                     viewModel: currentConditionsViewModel
                 )
-                
                 Divider()
-                
                 ForecastView(
                     viewModel: forecastViewModel
                 )
-            } else {
-                ProgressView()
+            case .error(let message):
+                Text(message)
+                    .padding()
+                    .foregroundStyle(Color.accentColor)
+                    .multilineTextAlignment(.center)
             }
         }
         .navigationTitle(viewModel.locationName)
@@ -44,8 +46,14 @@ struct LocationView: View {
 
 struct LocationView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            LocationView(viewModel: LocationViewModel(location: .preview, weatherService: WeatherPreviewClient()))
+        Group{
+            NavigationView {
+                LocationView(viewModel: LocationViewModel(location: .preview, weatherService: WeatherPreviewClient()))
+            }
+            
+            NavigationView {
+                LocationView(viewModel: LocationViewModel(location: .preview, weatherService: WeatherPreviewClient(result: .failure(.init()))))
+            }
         }
     }
 }
