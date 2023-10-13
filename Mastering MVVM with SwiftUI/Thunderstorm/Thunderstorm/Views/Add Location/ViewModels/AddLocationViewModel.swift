@@ -49,8 +49,14 @@ internal final class AddLocationViewModel: ObservableObject {
     //MARK: Public API
     
     func addLocation(with id: String) {
-        guard let locations = locations.first(where: { $0.id == id }) else { return }
-        
+        guard let location = locations.first(where: { $0.id == id }) else {
+            return
+        }
+        do {
+            try UserDefaults.standard.addLocation(location)
+        } catch {
+            print("Unable to Add Location \(error)")
+        }
         //TODO: ADD Location
     }
     
