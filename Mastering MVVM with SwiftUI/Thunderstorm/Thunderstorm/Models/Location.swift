@@ -7,7 +7,7 @@
 
 import CoreLocation
 
-struct Location: Codable {
+struct Location: Codable, Equatable {
     
     // MARK: - Properties
     
