@@ -11,7 +11,7 @@ struct LocationsView: View {
     
     // MARK: - Properties
     
-    let viewModel: LocationsViewModel
+    @ObservedObject var viewModel: LocationsViewModel
     
     @State private var showsAddLocationView: Bool = false
     
@@ -41,11 +41,14 @@ struct LocationsView: View {
                 AddLocationView(viewModel: viewModel.addLocationViewModel, showsAddLocationview: $showsAddLocationView)
             }
         }
+        .onAppear {
+            viewModel.start()
+        }
     }
 }
 
 struct LocationsView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationsView(viewModel: LocationsViewModel())
+        LocationsView(viewModel: .init())
     }
 }

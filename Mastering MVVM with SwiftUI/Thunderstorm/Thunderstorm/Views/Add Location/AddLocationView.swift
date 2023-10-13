@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddLocationView: View {
     
-    @ObservedObject var viewModel: AddLocationViewModel
+    @ObservedObject private(set) var viewModel: AddLocationViewModel
     
     var showsAddLocationview: Binding<Bool>
     

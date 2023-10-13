@@ -17,6 +17,7 @@
 		006962632AA67E7C000FDDE9 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006962622AA67E7C000FDDE9 /* LocationCell.swift */; };
 		007F76702AD96898009954E0 /* Geocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007F766F2AD96898009954E0 /* Geocoder.swift */; };
 		007F76732AD96920009954E0 /* CLGeocoder+Geocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007F76722AD96920009954E0 /* CLGeocoder+Geocoder.swift */; };
+		007F76752AD9735F009954E0 /* UserDefaults+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007F76742AD9735F009954E0 /* UserDefaults+Helper.swift */; };
 		00AEE6202AA7CE5D0080E57A /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE61F2AA7CE5D0080E57A /* LocationView.swift */; };
 		00AEE6232AA7CE970080E57A /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE6222AA7CE970080E57A /* LocationViewModel.swift */; };
 		00AEE6252AA7CF430080E57A /* CurrentConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE6242AA7CF430080E57A /* CurrentConditionsView.swift */; };
@@ -47,6 +48,7 @@
 		006962622AA67E7C000FDDE9 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		007F766F2AD96898009954E0 /* Geocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geocoder.swift; sourceTree = "<group>"; };
 		007F76722AD96920009954E0 /* CLGeocoder+Geocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLGeocoder+Geocoder.swift"; sourceTree = "<group>"; };
+		007F76742AD9735F009954E0 /* UserDefaults+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Helper.swift"; sourceTree = "<group>"; };
 		00AEE61F2AA7CE5D0080E57A /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		00AEE6222AA7CE970080E57A /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		00AEE6242AA7CF430080E57A /* CurrentConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentConditionsView.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				007F76722AD96920009954E0 /* CLGeocoder+Geocoder.swift */,
+				007F76742AD9735F009954E0 /* UserDefaults+Helper.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				006962632AA67E7C000FDDE9 /* LocationCell.swift in Sources */,
 				006962472AA675FB000FDDE9 /* ThunderstormApp.swift in Sources */,
 				0069625F2AA679BD000FDDE9 /* Location.swift in Sources */,
+				007F76752AD9735F009954E0 /* UserDefaults+Helper.swift in Sources */,
 				00EABBD92AD064DE00288879 /* AddLocationViewModel.swift in Sources */,
 				007F76702AD96898009954E0 /* Geocoder.swift in Sources */,
 				00AEE6292AA7D1A40080E57A /* ForecastViewModel.swift in Sources */,
