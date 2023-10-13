@@ -5,7 +5,7 @@
 //  Created by Javier Heisecke on 2023-09-04.
 //
 
-import Foundation
+import CoreLocation
 
 struct Location: Codable {
     
@@ -18,6 +18,23 @@ struct Location: Codable {
     
     let latitude: Double
     let longitude: Double
+}
+
+extension Location {
+    init?(placemark: CLPlacemark) {
+        guard let name = placemark.name,
+              let country = placemark.country,
+              let coordinate = placemark.location?.coordinate
+        else {
+            return nil
+        }
+        
+        id = UUID().uuidString
+        self.name = name
+        self.country = country
+        self.latitude = coordinate.latitude
+        self.longitude = coordinate.longitude
+    }
 }
 
 extension Location {

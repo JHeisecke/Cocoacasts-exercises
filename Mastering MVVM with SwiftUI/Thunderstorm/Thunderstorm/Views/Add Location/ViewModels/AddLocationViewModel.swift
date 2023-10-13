@@ -18,7 +18,7 @@ internal final class AddLocationViewModel: ObservableObject {
     
     @Published var query = ""
     
-    @Published private(set) var locations: [Location] = Location.previews
+    @Published private(set) var locations: [Location] = []
     
     
     var textFieldPlaceholder: String {
