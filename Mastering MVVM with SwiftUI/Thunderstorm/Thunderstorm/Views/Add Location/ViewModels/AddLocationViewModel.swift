@@ -22,6 +22,7 @@ internal final class AddLocationViewModel: ObservableObject {
     
     // MARK: - Properties
 
+    private let store: Store
     private let geocodingService: GeocodingService
     
     @Published private(set) var state: State = .empty
@@ -40,7 +41,11 @@ internal final class AddLocationViewModel: ObservableObject {
     
     // MARK: - Initialization
     
-    init(geocodingService: GeocodingService) {
+    init(
+        store: Store,
+        geocodingService: GeocodingService
+    ) {
+        self.store = store
         self.geocodingService = geocodingService
         
         setupBinding()
@@ -53,11 +58,10 @@ internal final class AddLocationViewModel: ObservableObject {
             return
         }
         do {
-            try UserDefaults.standard.addLocation(location)
+            try store.addLocation(location)
         } catch {
             print("Unable to Add Location \(error)")
         }
-        //TODO: ADD Location
     }
     
     // MARK: - Helper Methods

@@ -40,7 +40,13 @@ struct AddLocationView: View {
 }
 
 #Preview {
-    AddLocationView(viewModel: AddLocationViewModel(geocodingService: GeocodingPreviewClient()), showsAddLocationview: .constant(false))
+    AddLocationView(
+        viewModel: AddLocationViewModel(
+            store: PreviewsStore(),
+            geocodingService: GeocodingPreviewClient()
+        ),
+        showsAddLocationview: .constant(false)
+    )
 }
 
 fileprivate struct MessageView: View {

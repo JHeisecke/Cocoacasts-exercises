@@ -18,6 +18,9 @@
 		007F76702AD96898009954E0 /* Geocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007F766F2AD96898009954E0 /* Geocoder.swift */; };
 		007F76732AD96920009954E0 /* CLGeocoder+Geocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007F76722AD96920009954E0 /* CLGeocoder+Geocoder.swift */; };
 		007F76752AD9735F009954E0 /* UserDefaults+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007F76742AD9735F009954E0 /* UserDefaults+Helper.swift */; };
+		007F76782AD97ADE009954E0 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007F76772AD97ADE009954E0 /* Store.swift */; };
+		007F767A2AD97B3F009954E0 /* UserDefaults+Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007F76792AD97B3F009954E0 /* UserDefaults+Store.swift */; };
+		007F767C2AD97B9F009954E0 /* PreviewsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007F767B2AD97B9F009954E0 /* PreviewsStore.swift */; };
 		00AEE6202AA7CE5D0080E57A /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE61F2AA7CE5D0080E57A /* LocationView.swift */; };
 		00AEE6232AA7CE970080E57A /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE6222AA7CE970080E57A /* LocationViewModel.swift */; };
 		00AEE6252AA7CF430080E57A /* CurrentConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE6242AA7CF430080E57A /* CurrentConditionsView.swift */; };
@@ -49,6 +52,9 @@
 		007F766F2AD96898009954E0 /* Geocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geocoder.swift; sourceTree = "<group>"; };
 		007F76722AD96920009954E0 /* CLGeocoder+Geocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLGeocoder+Geocoder.swift"; sourceTree = "<group>"; };
 		007F76742AD9735F009954E0 /* UserDefaults+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Helper.swift"; sourceTree = "<group>"; };
+		007F76772AD97ADE009954E0 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		007F76792AD97B3F009954E0 /* UserDefaults+Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Store.swift"; sourceTree = "<group>"; };
+		007F767B2AD97B9F009954E0 /* PreviewsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewsStore.swift; sourceTree = "<group>"; };
 		00AEE61F2AA7CE5D0080E57A /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		00AEE6222AA7CE970080E57A /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		00AEE6242AA7CF430080E57A /* CurrentConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentConditionsView.swift; sourceTree = "<group>"; };
@@ -97,12 +103,13 @@
 		006962452AA675FB000FDDE9 /* Thunderstorm */ = {
 			isa = PBXGroup;
 			children = (
-				007F76712AD96913009954E0 /* Extensions */,
-				0069625D2AA679B2000FDDE9 /* Models */,
+				007F76762AD97AB7009954E0 /* Store */,
 				006962562AA67618000FDDE9 /* App */,
 				006962552AA6760D000FDDE9 /* Views */,
-				00EABBDE2AD0786000288879 /* Geocoding */,
+				0069625D2AA679B2000FDDE9 /* Models */,
 				006962542AA67605000FDDE9 /* Resources */,
+				007F76712AD96913009954E0 /* Extensions */,
+				00EABBDE2AD0786000288879 /* Geocoding */,
 				0069624C2AA675FC000FDDE9 /* Preview Content */,
 			);
 			path = Thunderstorm;
@@ -177,6 +184,16 @@
 				007F76742AD9735F009954E0 /* UserDefaults+Helper.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		007F76762AD97AB7009954E0 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				007F76772AD97ADE009954E0 /* Store.swift */,
+				007F76792AD97B3F009954E0 /* UserDefaults+Store.swift */,
+				007F767B2AD97B9F009954E0 /* PreviewsStore.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 		00AEE61E2AA7CE450080E57A /* Location */ = {
@@ -302,13 +319,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				007F767C2AD97B9F009954E0 /* PreviewsStore.swift in Sources */,
 				00AEE6272AA7CF4E0080E57A /* CurrentConditionsViewModel.swift in Sources */,
+				007F767A2AD97B3F009954E0 /* UserDefaults+Store.swift in Sources */,
 				00EABBE02AD0786E00288879 /* GeocodingService.swift in Sources */,
 				00AEE6312AA7DFEC0080E57A /* Colors.swift in Sources */,
 				00EABBDD2AD0667700288879 /* AddLocationCellViewModel.swift in Sources */,
 				00AEE6252AA7CF430080E57A /* CurrentConditionsView.swift in Sources */,
 				006962592AA6764B000FDDE9 /* LocationsView.swift in Sources */,
 				007F76732AD96920009954E0 /* CLGeocoder+Geocoder.swift in Sources */,
+				007F76782AD97ADE009954E0 /* Store.swift in Sources */,
 				006962632AA67E7C000FDDE9 /* LocationCell.swift in Sources */,
 				006962472AA675FB000FDDE9 /* ThunderstormApp.swift in Sources */,
 				0069625F2AA679BD000FDDE9 /* Location.swift in Sources */,

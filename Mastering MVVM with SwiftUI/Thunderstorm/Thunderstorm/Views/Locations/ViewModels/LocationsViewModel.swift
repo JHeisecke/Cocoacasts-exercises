@@ -11,6 +11,10 @@ import Combine
 @MainActor
 final class LocationsViewModel: ObservableObject {
     
+    // MARK: - Properties
+    
+    private let store: Store
+    
     var title: String {
         "Thunderstorm"
     }
@@ -22,24 +26,24 @@ final class LocationsViewModel: ObservableObject {
     @Published var locationCellViewModels: [LocationCellViewModel] = []
     
     var addLocationViewModel: AddLocationViewModel {
-        AddLocationViewModel(geocodingService: GeocodingClient())
+        AddLocationViewModel(
+            store: store,
+            geocodingService: GeocodingClient()
+        )
+    }
+    
+    // MARK: - Initialization
+    
+    init(store: Store) {
+        self.store = store
     }
     
     // MARK: - Methods
     
     func start() {
-        /// We access the locations saved in the UserDefaults singleton by using the key defined previously
-        /// We get rid of nil values using .compactMap
-        /// We decode the value saved in UserDefaults to the type [Location]
-        /// In case of error we publish an empty array
         /// We map the result of the result to the LocationCellViewModel class
         /// And assign the result to the locationCellViewModels array
-        UserDefaults.standard.publisher(for: \.locations)
-            .compactMap { $0 }
-            .decode(type: [Location].self,
-                    decoder: JSONDecoder()
-            )
-            .replaceError(with: [])
+        store.locationsPublishers
             .map { $0.map(LocationCellViewModel.init(location:)) }
             .eraseToAnyPublisher()
             .assign(to: &$locationCellViewModels)
