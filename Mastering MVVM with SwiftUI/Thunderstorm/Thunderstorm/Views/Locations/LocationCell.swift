@@ -11,7 +11,7 @@ struct LocationCell: View {
     
     // MARK: - Properties
     
-    var viewModel: LocationCellViewModel
+    @ObservedObject var viewModel: LocationCellViewModel
     
     // MARK: - View
     
@@ -54,13 +54,19 @@ struct LocationCell: View {
                 .stroke(Color.gray)
                 .opacity(0.25)
         }
+        .task {
+            await viewModel.start()
+        }
     }
 }
 
 struct LocationCellView_Previews: PreviewProvider {
         
     static var previews: some View {
-        let viewModel = LocationCellViewModel(location: .preview)
+        let viewModel = LocationCellViewModel(
+            location: .preview,
+            weatherService: WeatherPreviewClient()
+        )
         
         LocationCell(viewModel: viewModel)
     }

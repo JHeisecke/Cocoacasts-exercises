@@ -24,10 +24,6 @@ struct WeatherData: Decodable {
     let forecast: [DayConditions]
     
     // MARK: - Initialization
-    enum CodingKeys: CodingKey {
-        case currently
-        case forecast
-    }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(

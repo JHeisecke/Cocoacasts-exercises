@@ -49,6 +49,12 @@ struct LocationsView: View {
 
 struct LocationsView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationsView(viewModel: .init(store: PreviewsStore()))
+        LocationsView(
+            viewModel:
+                    .init(
+                        store: PreviewsStore(),
+                        weatherService: WeatherPreviewClient()
+                    )
+        )
     }
 }

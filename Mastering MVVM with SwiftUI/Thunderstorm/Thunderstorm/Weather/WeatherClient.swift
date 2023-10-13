@@ -33,10 +33,11 @@ final class WeatherClient: WeatherService {
         
         let (data, _) = try await URLSession.shared.data(for: request)
         
-        return try ClearSkyDecoder().decode(
+        let result = try ClearSkyDecoder().decode(
             WeatherData.self,
             from: data
         )
+        return result
     }
     
 }
