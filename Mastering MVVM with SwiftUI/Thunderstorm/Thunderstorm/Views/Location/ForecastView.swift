@@ -29,6 +29,6 @@ struct ForecastView: View {
 
 struct ForecastView_Previews: PreviewProvider {
     static var previews: some View {
-        ForecastView(viewModel: .init())
+        ForecastView(viewModel: .init(forecast: WeatherData.preview.forecast))
     }
 }

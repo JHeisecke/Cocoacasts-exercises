@@ -10,11 +10,11 @@ import SwiftUI
 struct ForecastCell: View {
     
     // MARK: - Properties
-
+    
     let viewModel: ForecastCellViewModel
-
+    
     // MARK: - View
-
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -27,7 +27,7 @@ struct ForecastCell: View {
                     Text(viewModel.summary)
                 }
                 .font(.body)
-            .foregroundColor(.darkGray)
+                .foregroundColor(.darkGray)
             }
             Spacer()
             VStack(alignment: .trailing) {
@@ -54,6 +54,11 @@ struct ForecastCell: View {
 
 struct ForecastCell_Previews: PreviewProvider {
     static var previews: some View {
-        ForecastCell(viewModel: .init(forecastDate: Date()))
+        ForecastCell(
+            viewModel:
+                    .init(
+                        dayConditions: WeatherData.preview.forecast[0]
+                    )
+        )
     }
 }
