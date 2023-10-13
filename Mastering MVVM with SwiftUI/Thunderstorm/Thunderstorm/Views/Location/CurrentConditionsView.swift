@@ -32,6 +32,8 @@ struct CurrentConditionsView: View {
 
 struct CurrentConditionsView_Previews: PreviewProvider {
     static var previews: some View {
-        CurrentConditionsView(viewModel: .init())
+        CurrentConditionsView(
+            viewModel: .init(currently: WeatherData.preview.currently)
+        )
     }
 }

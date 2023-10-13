@@ -9,17 +9,27 @@ import Foundation
 
 struct CurrentConditionsViewModel {
     
+    private let currently: WeatherData.CurrentConditions
+    
+    private let clearSkyFormatter = ClearSkyFormatter()
+    
+    // MARK: - Initialization
+    
+    init(currently: WeatherData.CurrentConditions) {
+        self.currently = currently
+    }
+    
     // MARK: - Public APIs
     
     var summary: String {
-        "Clear"
+        currently.summary
     }
 
     var windSpeed: String {
-        "10 mi/h"
+        clearSkyFormatter.formatWindSpeed(currently.windSpeed)
     }
 
     var temperature: String {
-        "90 °F"
+        clearSkyFormatter.formatTemperature(currently.temperature)
     }
 }
